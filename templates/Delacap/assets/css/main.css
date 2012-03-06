@@ -1,0 +1,297 @@
+html, body
+{
+	height: 100%;
+	background: #E3E9ED url('../img/body_bg.png');
+}
+
+
+ 
+ 
+.form-delacap input[type="checkbox"]
+{
+	padding: 0;
+	margin: 0 3px 0 0;
+}
+ 
+.nobr
+{
+	white-space:	nowrap;
+}
+.nobr input
+{
+	display: inline;
+}
+
+.navbar .brand
+{
+	float: left;
+	display: block;
+	padding: 8px 10px 12px;
+	margin-left: -12px;
+}
+
+.navbar .brand img
+{
+	width: 80px;
+	height:	43px;
+	background: transparent url('../img/logo_header.png') no-repeat center;
+}
+
+.navbar-inner
+{
+	background: #353535 url('../img/navbar_bg.png') repeat-x bottom left;
+	height:	60px;
+}
+.navbar .divider-vertical {
+height: 60px;
+margin: 0 0;
+}
+.navbar .btn, .navbar .btn-group {
+margin-top: 15px;
+}
+.navbar .nav > li > a
+{
+	padding: 20px 12px 11px;
+	color: #999;
+	text-shadow: 0 -1px 0 #003C5A;
+}
+
+.navbar .nav
+{
+	position: relative;
+	left: 0;
+	display: block;
+	float: left;
+	margin: 0px 1px 0 0;
+}
+
+	.dropdown-menu a:hover
+	{
+		text-shadow: 0 -1px 0 #003C5A;
+	}
+
+
+table {
+  background-color: #fff;
+}
+
+
+.content
+{
+	margin-top:	77px;
+  text-shadow: 0 1px 0 #FFF;
+}
+footer
+{
+	margin:			27px 0;
+	font-size:		11px;
+	text-shadow: 0 1px 0 #FFF;
+}
+
+.nav-pills .active > a, .nav-pills .active > a:hover {
+	text-shadow: 0 -1px 0 #003C5A;
+}
+
+.search
+{
+	display: inline-block;
+	float:		right;
+	position: relative;
+	top: -45px;
+}
+
+form.nomargin
+{
+	padding: 0;
+	margin:	0;
+}
+
+.loginheader
+{
+	margin-top:	40px;
+}
+.loginheader img
+{
+	width: 190px;
+	height:	101px;
+	background: transparent url('../img/logo_large.png') no-repeat center;
+}
+.loginmsg
+{
+	margin-top:	20px;
+	text-align: left;
+}
+.loginpage
+{
+	text-align: center;
+	width: 300px;
+	margin: 0 auto;
+}
+.loginsec
+{
+	margin: 20px auto;
+	text-shadow: 0 1px 0 #FFF;
+}
+
+
+h2
+{
+	color:	#36393C;
+	font-size:	22px;
+	margin-bottom:	12px;
+}
+
+
+.overviewadd
+{
+	margin-bottom:	12px;
+}
+
+
+
+
+
+/*-------------
+SEARCH
+-------------*/
+
+
+#searchForm fieldset {
+    width:		450px;
+    position:relative;
+    display:block;
+}
+
+	div.input
+	{
+		width:			380px;
+		/*
+		padding:5px 15px 7px 15px;
+		*/
+		padding:			0 0 0 1px;
+		border-radius:		20px;
+		border:				1px solid #c6d2db;
+		border-top:			1px solid #b4c1cb;
+		box-shadow:			inset 0 1px 2px rgba(0,0,0,0.08);
+		float:				right;
+		background:			#FFF;
+	}
+
+    div.input.focus
+	{
+        border:				1px solid #9ecbe2;
+        box-shadow:			0 0 6px #abdcff, inset 0 1px 2px rgba(0,0,0,0.08);
+    }
+
+
+	div.input table
+	{
+		width:				100%;
+		background-color: 	transparent;
+		border: 			none;
+		border-radius: 		none;
+	}
+	
+	div.input .nav
+	{
+		margin-bottom: 0px;
+	}
+
+	div.input .nav-pills > li > a.searchpill
+	{
+		padding-top: 		4px;
+		padding-bottom: 	4px;
+		margin-top: 		1px;
+		margin-bottom: 		1px;
+		-webkit-border-radius: 16px;
+		-moz-border-radius: 16px;
+		border-radius: 		16px;
+	}
+
+	div.input .nav-tabs > li > a, .nav-pills > li > a.searchpill
+	{
+		padding-right: 		4px;
+		padding-left: 8px;
+		margin-right: 0px;
+		line-height: 14px;
+	}
+	
+	.dropdown.open .searchpill
+	{
+		text-shadow: 0 -1px 0 #999;
+	}
+
+
+	input#s
+	{
+		width:				100%;
+		border:				0;
+		border-radius:		20px;
+		background:			transparent;
+		height:				16px;
+		color:				#000;
+		/*
+		color:				#b4bdc4;
+		*/
+		text-shadow:		0 1px 1px #fff;
+	
+		-webkit-box-shadow: none;
+		-moz-box-shadow: 	none;
+		box-shadow: 		none;
+		-webkit-transition: none;
+		-moz-transition: 	none;
+		-ms-transition: 	none;
+		-o-transition: 		none;
+		transition: 		none;
+	}
+
+    input#s:focus
+	{
+        outline:			none
+    }
+
+	input#searchSubmit
+	{
+		width:19px;
+		height:19px;
+		text-indent:-9999px;
+		overflow:hidden;
+		/*
+		background:url(../images/search-icon.png) no-repeat;
+		*/
+		border:0;
+		position:absolute;
+		top:7px; right:13px;
+		z-index:5;
+		display:none;
+		cursor:pointer;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
