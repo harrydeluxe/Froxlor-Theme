@@ -1,0 +1,12 @@
+h1. A simple and clean theme for Froxlor, based on Twitter Bootstrap.
+
+
+!http://harrydeluxe.github.com/Froxlor-Theme/assets/images/index.jpg!
+
+!http://harrydeluxe.github.com/Froxlor-Theme/assets/images/databases.jpg!
+
+!http://harrydeluxe.github.com/Froxlor-Theme/assets/images/supporttickets.jpg!
+
+!http://harrydeluxe.github.com/Froxlor-Theme/assets/images/cronjob.jpg!
+
+Note: Early Beta!
