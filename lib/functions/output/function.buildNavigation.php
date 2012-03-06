@@ -31,17 +31,12 @@ function buildNavigation($navigation, $userinfo)
 	$returnvalue = '';
 	if($userinfo['theme'] == 'Delacap')
 	{
-	//echo '<pre>'; print_r($userinfo);exit;
-	//echo '<pre>'; print_r($navigation);exit;
 		foreach($navigation as $key => $box)
 		{
-			//echo '<pre>'; print_r($navigation);exit;
-			
 			if((!isset($box['show_element']) || $box['show_element'] === true) &&
 				(!isset($box['required_resources']) || $box['required_resources'] == '' || (isset($userinfo[$box['required_resources']]) && ((int)$userinfo[$box['required_resources']] > 0 || $userinfo[$box['required_resources']] == '-1'))))
 			{
 				
-				//echo '<pre>'; print_r($box);exit;
 				if($key == 'index')
 				{
 					$box['label'] = $box['elements'][0]['label'];
@@ -74,8 +69,14 @@ function buildNavigation($navigation, $userinfo)
 							if($element['url'] == 'admin_index.php?page=change_password')
 								$element['modal'] = true;
 								
+							if($element['url'] == 'customer_index.php?page=change_theme')
+								$element['modal'] = true;
+							
+							if($element['url'] == 'customer_index.php?page=change_language')
+								$element['modal'] = true;
 								
-								
+							if($element['url'] == 'customer_index.php?page=change_password')
+								$element['modal'] = true;
 								
 							// append sid only to local
 					
