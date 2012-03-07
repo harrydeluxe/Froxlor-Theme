@@ -12,16 +12,18 @@
                 <br /><span>{$lng['panel']['translator']}: {$lng['translator']}
             </if>
             <br />
-            <span>Screendesign by <a href="http://www.delacap.com/" rel="external">DELACAP</a></span>
+            <span>Theme by <a href="http://www.delacap.com/" rel="external">DELACAP</a>. Based on <a href="http://twitter.github.com/bootstrap/" rel="external">Twitter Bootstrap</a>.</span>
         </footer>
     </if>
     
     </div><!-- /container -->
     <div class="modal hide fade in" id="dialogmodal"></div>
+    <div class="modal hide fade in" id="dialogerror"></div>
     <script type="text/javascript" src="templates/Delacap/assets/js/jquery.min.js"></script>
     <script type="text/javascript" src="templates/Delacap/assets/bootstrap/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="templates/Delacap/assets/js/select.js"></script>
     <script type="text/javascript" src="templates/Delacap/assets/js/nav.js"></script>
+    <script type="text/javascript" src="templates/Delacap/assets/js/form.js"></script>
     <script type="text/javascript" src="templates/Delacap/assets/js/main.js"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-<div class="modal-header">
+<div class="modal-header" dc="dialog">
     <a class="close" data-dismiss="modal">&times;</a>
   <h3>{$lng['error']['error']}</h3>
 </div>

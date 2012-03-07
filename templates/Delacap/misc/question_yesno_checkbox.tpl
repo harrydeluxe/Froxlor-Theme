@@ -2,7 +2,7 @@
     <input type="hidden" name="s" value="$s" />
     <input type="hidden" name="send" value="send" />
     {$hiddenparams}
-    <div class="modal-header">
+    <div class="modal-header" dc="dialog">
         <a class="close" data-dismiss="modal">&times;</a>
       <h3>{$lng['question']['question']}</h3>
     </div>

@@ -9,7 +9,7 @@ $header
         
 		<section class="spinning">
 
-			<form class="form-inline form-delacap" action="{$linker->getLink(array('section' => 'customers'))}" method="post" enctype="application/x-www-form-urlencoded">
+			<form rel="submit" class="form-inline form-delacap" action="{$linker->getLink(array('section' => 'customers'))}" method="post" enctype="application/x-www-form-urlencoded">
 				<fieldset>
                 
 					<table class="table table-bordered table-striped">

@@ -1,4 +1,4 @@
-<form class="nomargin form-delacap" method="post" action="{$linker->getLink(array('section' => 'index'))}" enctype="application/x-www-form-urlencoded">
+<form rel="submit" class="nomargin form-delacap" method="post" action="{$linker->getLink(array('section' => 'index'))}" enctype="application/x-www-form-urlencoded">
     <input type="hidden" name="s" value="$s" />
     <input type="hidden" name="page" value="$page" />
     <input type="hidden" name="send" value="send" />

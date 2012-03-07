@@ -8,11 +8,9 @@ $header
   
 		<section class="fullform bradiusodd">
 
-			<form class="form-inline form-delacap" action="{$linker->getLink(array('section' => 'autoresponder'))}" method="post" enctype="application/x-www-form-urlencoded">
+			<form rel="submit" class="form-inline form-delacap" action="{$linker->getLink(array('section' => 'autoresponder'))}" method="post" enctype="application/x-www-form-urlencoded">
 				<fieldset>
-<div class="alert alert-error" id="alert">
-				<strong>Oh snap!</strong>
-			  </div>
+                
 					<table class="table table-bordered table-striped">
 						{$autoresponder_edit_form}
 					</table>

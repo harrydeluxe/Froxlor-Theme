@@ -15,7 +15,7 @@ $header
 
 	<section class="fullform bradiusodd">
 
-		<form class="form-inline form-delacap" action="{$linker->getLink(array('section' => 'email'))}" method="post" enctype="application/x-www-form-urlencoded">
+		<form rel="submit" class="form-inline form-delacap" action="{$linker->getLink(array('section' => 'email'))}" method="post" enctype="application/x-www-form-urlencoded">
 			<fieldset>
 
 				<table class="table table-bordered table-striped">

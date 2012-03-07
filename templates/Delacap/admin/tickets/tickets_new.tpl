@@ -8,7 +8,7 @@ $header
 
 		<section class="fullform bradiusodd">
 
-			<form action="{$linker->getLink(array('section' => 'tickets'))}" method="post" enctype="application/x-www-form-urlencoded">
+			<form rel="submit" action="{$linker->getLink(array('section' => 'tickets'))}" method="post" enctype="application/x-www-form-urlencoded">
 				<fieldset>
 
 					<table class="table table-bordered table-striped">

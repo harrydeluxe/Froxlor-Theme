@@ -25,6 +25,8 @@ $(document).ready(function()
 	});
 
 
+	submitForm(false);
+
 	$("ul#topnav").menu({
 		beforeShow: function(a, b)
 		{
@@ -36,16 +38,20 @@ $(document).ready(function()
 	$(".login").fadeIn("slow");
 	
 	$("a[rel=confirm]").click(function(e){
-			$("#dialogmodal").load($(this).attr("href"),
-				function()
-				{
-					$('#dialogmodal').modal({
-					  backdrop: true,
-					  show: true
-					});
+		$("#dialogmodal").load($(this).attr("href"),
+			function()
+			{
+				$('#dialogmodal').modal({
+				  backdrop: true,
+				  show: true
 				});
-			return false;
-		});
+				submitForm(true);
+			});
+		return false;
+	});
+	
+	
+	
 		
 	$("div[style='color:red']").replaceWith(function(){
 			return '<span class="label label-important">' + $(this).html() + '</span>';
@@ -85,3 +91,64 @@ $('input#s').bind('focus',
 	}
     );
 });
+
+
+
+
+function submitForm(modal)
+{
+	var target = $("form[rel=submit]").attr('action');
+					
+	$("form[rel=submit]").bind(
+		'submit',
+		function()
+		{
+			function showResponse(response, statusText)
+			{
+				if(statusText == 'success')
+				{
+					if(response.error == 'true')
+					{
+						$('#kontaktform').fadeTo("fast", 1);
+						showMsg(response.msg);
+					}
+					else
+					{
+						$('#kontaktformholder').html(response.msg);
+					}
+				}
+				$('#kontaktformsubmit').removeClass("wait");
+			
+			}
+			
+			$(this).ajaxSubmit({
+				success: function(response, statusText)
+				{
+					if(statusText == 'success')
+					{
+						if(response.indexOf('dc="dialog"') >= 1)
+						{
+							$('#dialogerror').html(response).modal({
+								backdrop: true,
+								show: true
+							});
+							
+							if(modal)
+							{
+								$('#dialogmodal').modal('hide');
+								$('#dialogerror').on('hide', function () {
+								 console.log('hide');
+								 $('#dialogmodal').modal('show');
+								});
+							}
+						}
+						else
+						{
+							window.location.href = target; 
+						}
+					}
+				}
+				});
+			return false;
+		});
+}
