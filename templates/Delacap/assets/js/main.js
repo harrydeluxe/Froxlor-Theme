@@ -49,7 +49,14 @@ $(document).ready(function()
 			});
 		return false;
 	});
-	
+
+
+	// for manage_packages.tpl
+	$('#manage_packages_actions > li > a').click(function()
+	{
+		$('#manage_packages_form > input[type="submit"]').attr('name', $(this).attr('href')).click();
+		return false;
+	});
 	
 	
 		
@@ -60,7 +67,6 @@ $(document).ready(function()
 	$("div.jqtransform").jqTransform();
 
 	$().tab();
-	//$().dropdown();
 	$().alert('close');
 	$('[rel=tooltip]').tooltip({
 		animation: true,

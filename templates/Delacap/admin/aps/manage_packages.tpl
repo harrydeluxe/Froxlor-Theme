@@ -7,11 +7,12 @@
 
 	<section class="midform bradiusodd">
 
-    <form action="$filename" method="post" enctype="application/x-www-form-urlencoded">
+    <form id="manage_packages_form" action="$filename" method="post" enctype="application/x-www-form-urlencoded">
         <input type="hidden" name="s" value="$s" />
         <input type="hidden" name="action" value="$action" />
         <input type="hidden" name="page" value="$page" />
         <input type="hidden" name="save" value="save" />
+        <input class="hide" type="submit" name="downloadallpackages" />
     </form>
 
     
@@ -20,7 +21,7 @@
         {$lng['admin']['phpsettings']['actions']}
         <span class="caret"></span>
         </a>
-        <ul class="dropdown-menu">
+        <ul id="manage_packages_actions" class="dropdown-menu">
             <li><a href="downloadallpackages">{$lng['aps']['downloadallpackages']}</a></li>
             <li><a href="updateallpackages">{$lng['aps']['updateallpackages']}</a></li>
             <li><a href="enablenewest">{$lng['aps']['enablenewest']}</a></li>
