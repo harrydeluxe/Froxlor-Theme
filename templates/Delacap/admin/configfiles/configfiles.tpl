@@ -30,7 +30,7 @@ $header
                     <div class="alert-message block-message warning">
                         {$lng['admin']['configfiles']['restart']}
                     </div>
-					<textarea class="xxlarge" rows="10" readonly="readonly">$restart</textarea></td>
+					<textarea class="span8" rows="10">$restart</textarea></td>
 				</tr>
 		</table>
 		<br /><br />
