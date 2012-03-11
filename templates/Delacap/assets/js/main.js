@@ -25,7 +25,23 @@ $(document).ready(function()
 	});
 
 
-	submitForm(false);
+	bindSubmitForm(false);
+	
+	// catch all submit buttons, to provide a dialog for errors
+	$("a[rel=confirm]").click(function(e){
+		$("#dialogmodal").load($(this).attr("href"),
+			function()
+			{
+				$('#dialogmodal').modal({
+				  backdrop: true,
+				  show: true
+				});
+				bindSubmitForm(true);
+			});
+		return false;
+	});
+
+
 
 	$("ul#topnav").menu({
 		beforeShow: function(a, b)
@@ -37,18 +53,6 @@ $(document).ready(function()
 
 	$(".login").fadeIn("slow");
 	
-	$("a[rel=confirm]").click(function(e){
-		$("#dialogmodal").load($(this).attr("href"),
-			function()
-			{
-				$('#dialogmodal').modal({
-				  backdrop: true,
-				  show: true
-				});
-				submitForm(true);
-			});
-		return false;
-	});
 
 
 	// for manage_packages.tpl
@@ -85,26 +89,25 @@ $(document).ready(function()
 		})
 	})
 
-var divInput = $('div.input');
-$('input#s').bind('focus',
-	function()
-	{
-		divInput.addClass('focus');	
-    }).bind('blur',
-	function()
-	{
-		divInput.removeClass('focus');
-	}
-    );
+	// search field
+	var divInput = $('div.input');
+	$('input#s').bind('focus',
+		function()
+		{
+			divInput.addClass('focus');	
+		}).bind('blur',
+		function()
+		{
+			divInput.removeClass('focus');
+		}
+		);
 });
 
 
 
 
-function submitForm(modal)
+function bindSubmitForm(modal)
 {
-	var target = $("form[rel=submit]").attr('action');
-					
 	$("form[rel=submit]").bind(
 		'submit',
 		function()
@@ -128,7 +131,8 @@ function submitForm(modal)
 			}
 			
 			$(this).ajaxSubmit({
-				success: function(response, statusText)
+				traditional: true,
+				success: function(response, statusText, xhr, form)
 				{
 					if(statusText == 'success')
 					{
@@ -143,14 +147,21 @@ function submitForm(modal)
 							{
 								$('#dialogmodal').modal('hide');
 								$('#dialogerror').on('hide', function () {
-								 console.log('hide');
-								 $('#dialogmodal').modal('show');
+									$('#dialogmodal').modal('show');
 								});
 							}
 						}
 						else
 						{
-							window.location.href = target; 
+							var page = $("input[name=page]", form).attr('value');
+								target = form.attr('action');
+							
+							if(page && target.indexOf('page=' + page) == -1)
+							{
+								target = target + '&page=' + page;
+							}
+							
+							window.location.href = target;
 						}
 					}
 				}
