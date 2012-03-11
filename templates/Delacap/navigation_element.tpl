@@ -7,6 +7,8 @@
         	<a class="btn btn-info dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)" rel="tooltip" title="{$completeLink['label']}"><i class="icon-user icon-white"></i> <span class="caret"></span></a>
         	<ul class="dropdown-menu right">
         		{$navigation_links}
+                <li class="divider"></li>
+                <li><a rel="about" href="javascript:void(0)">Info</a></li>
         	</ul>
         </div>
     </ul>
