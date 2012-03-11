@@ -16,73 +16,111 @@ $header
 
     <div class="tab-content">
         <div class="tab-pane active" id="accountdetails">
-            <table class="table table-bordered table-striped">
-                <tr>
-                    <td>{$lng['login']['username']}:</td>
-                    <td>{$userinfo['loginname']}</td>
-                </tr>
-                <tr>
-                    <td>{$lng['customer']['domains']}:</td>
-                    <td>$domains</td>
-                </tr>
-                <tr>
-                    <td>{$lng['customer']['subdomains']} ({$lng['customer']['usedmax']}):</td>
-                    <td>{$userinfo['subdomains_used']}/{$userinfo['subdomains']}</td>
-                </tr>
-                <tr>
-                    <td>{$lng['customer']['diskspace']} ({$lng['customer']['usedmax']}):</td>
-                    <td>{$userinfo['diskspace_used']}/{$userinfo['diskspace']}</td>
-                </tr>
-                <tr>
-                    <td>{$lng['customer']['traffic']} ($month, {$lng['customer']['usedmax']}):</td>
-                    <td>{$userinfo['traffic_used']}/{$userinfo['traffic']}</td>
-                </tr>
-                <tr>
-                    <td>{$lng['customer']['emails']} ({$lng['customer']['usedmax']}):</td>
-                    <td>{$userinfo['emails_used']}/{$userinfo['emails']}</td>
-                </tr>
-                <tr>
-                    <td>{$lng['customer']['accounts']} ({$lng['customer']['usedmax']}):</td>
-                    <td>{$userinfo['email_accounts_used']}/{$userinfo['email_accounts']}</td>
-                </tr>
-                <tr>
-                    <td>{$lng['customer']['forwarders']} ({$lng['customer']['usedmax']}):</td>
-                    <td>{$userinfo['email_forwarders_used']}/{$userinfo['email_forwarders']}</td>
-                </tr>
+        
+        	<ul class="thumbnails">
+            	<li class="span12">
+                	<div class="thumbnail">
+                    <h5>{$lng['login']['username']}</h5>
+                       {$userinfo['loginname']}
+                    <br /><br />
+                    <h5>{$lng['customer']['domains']}</h5>
+                        $domains
+                    </div>
+                </li>
+            	<li class="span6">
+                	<div class="thumbnail">
+                    <h5>{$lng['customer']['subdomains']}</h5>
+                        <div class="progress used" used="{$userinfo['subdomains_used']}" total="{$userinfo['subdomains']}"></div>
+                        <small>{$userinfo['subdomains_used']} / {$userinfo['subdomains']}</small>
+                    </div>
+                </li>
+            	<li class="span6">
+                	<div class="thumbnail">
+                    <h5>{$lng['customer']['diskspace']} ({$lng['customer']['usedmax']})</h5>
+                        <div class="progress used" used="{$userinfo['diskspace_used']}" total="{$userinfo['diskspace']}"></div>
+                    	<small>{$userinfo['diskspace_used']} / {$userinfo['diskspace']}</small>
+                    </div>
+                </li>
+            	<li class="span6">
+                	<div class="thumbnail">
+                    <h5>{$lng['customer']['traffic']} ($month, {$lng['customer']['usedmax']})</h5>
+                        <div class="progress used" used="{$userinfo['traffic_used']}" total="{$userinfo['traffic']}"></div>
+                    	<small>{$userinfo['traffic_used']} / {$userinfo['traffic']}</small>
+                    </div>
+                </li>
+            	<li class="span6">
+                	<div class="thumbnail">
+                    <h5>{$lng['customer']['emails']}</h5>
+                        <div class="progress used" used="{$userinfo['emails_used']}" total="{$userinfo['emails']}"></div>
+                    	<small>{$userinfo['emails_used']} / {$userinfo['emails']}</small>
+                    </div>
+                </li>
+            	<li class="span6">
+                	<div class="thumbnail">
+                    <h5>{$lng['customer']['accounts']} ({$lng['customer']['usedmax']})</h5>
+                        <div class="progress used" used="{$userinfo['email_accounts_used']}" total="{$userinfo['email_accounts']}"></div>
+                        <small>{$userinfo['email_accounts_used']} / {$userinfo['email_accounts']}</small>
+                    </div>
+                </li>
+            	<li class="span6">
+                	<div class="thumbnail">
+                    <h5>{$lng['customer']['forwarders']}</h5>
+                        <div class="progress used" used="{$userinfo['email_forwarders_used']}" total="{$userinfo['email_forwarders']}"></div>
+                        <small>{$userinfo['email_forwarders_used']} / {$userinfo['email_forwarders']}</small>
+                    </div>
+                </li>
                 <if $settings['system']['mail_quota_enabled'] == 1>
-                <tr>
-                    <td>{$lng['customer']['email_quota']} ({$lng['panel']['megabyte']}, {$lng['customer']['usedmax']}):</td>
-                    <td>{$userinfo['email_quota_used']}/{$userinfo['email_quota']}</td>
-                </tr>
+            	<li class="span6">
+                	<div class="thumbnail">
+                    <h5>{$lng['customer']['email_quota']} ({$lng['panel']['megabyte']}, {$lng['customer']['usedmax']})</h5>
+                        <div class="progress used" used="{$userinfo['email_quota_used']}" total="{$userinfo['email_quota']}"></div>
+                        <small>{$userinfo['email_quota_used']} / {$userinfo['email_quota']}</small>
+                    </div>
+                </li>
                 </if>
-                </tr>
                 <if $settings['autoresponder']['autoresponder_active'] == 1>
-                <tr>
-                    <td>{$lng['customer']['autoresponder']} ({$lng['customer']['usedmax']}):</td>
-                    <td>{$userinfo['email_autoresponder_used']}/{$userinfo['email_autoresponder']}</td>
-                </tr>
+            	<li class="span6">
+                	<div class="thumbnail">
+                    <h5>{$lng['customer']['autoresponder']}</h5>
+                        <div class="progress used" used="{$userinfo['email_autoresponder_used']}" total="{$userinfo['email_autoresponder']}"></div>
+                        <small>{$userinfo['email_autoresponder_used']} / {$userinfo['email_autoresponder']}</small>
+                    </div>
+                </li>
                 </if>
-                <tr>
-                    <td>{$lng['customer']['mysqls']} ({$lng['customer']['usedmax']}):</td>
-                    <td>{$userinfo['mysqls_used']}/{$userinfo['mysqls']}</td>
-                </tr>
-                <tr>
-                    <td>{$lng['customer']['ftps']} ({$lng['customer']['usedmax']}):</td>
-                    <td>{$userinfo['ftps_used']}/{$userinfo['ftps']}</td>
-                </tr>
+            	<li class="span6">
+                	<div class="thumbnail">
+                    <h5>{$lng['customer']['mysqls']}</h5>
+                        <div class="progress used" used="{$userinfo['mysqls_used']}" total="{$userinfo['mysqls']}"></div>
+                        <small>{$userinfo['mysqls_used']} / {$userinfo['mysqls']}</small>
+                    </div>
+                </li>
+            	<li class="span6">
+                	<div class="thumbnail">
+                    <h5>{$lng['customer']['ftps']}</h5>
+                        <div class="progress used" used="{$userinfo['ftps_used']}" total="{$userinfo['ftps']}"></div>
+                        <small>{$userinfo['ftps_used']} / {$userinfo['ftps']}</small>
+                    </div>
+                </li>
                 <if (int)$settings['aps']['aps_active'] == 1>
-                <tr>
-                    <td>{$lng['aps']['numberofapspackages']} ({$lng['customer']['usedmax']}):</td>
-                    <td>{$userinfo['aps_packages_used']}/{$userinfo['aps_packages']}</td>
-                </tr>
+            	<li class="span6">
+                	<div class="thumbnail">
+                    <h5>{$lng['aps']['numberofapspackages']}</h5>
+                        <div class="progress used" used="{$userinfo['aps_packages_used']}" total="{$userinfo['aps_packages']}"></div>
+                        <small>{$userinfo['aps_packages_used']} / {$userinfo['aps_packages']}</small>
+                    </div>
+                </li>
                 </if>
                 <if $settings['ticket']['enabled'] == 1 >
-                <tr>
-                    <td>{$lng['customer']['tickets']} ({$lng['customer']['usedmax']}):</td>
-                    <td>{$userinfo['tickets_used']}/{$userinfo['tickets']}</td>
-                </tr>
+            	<li class="span6">
+                	<div class="thumbnail">
+                    <h5>{$lng['customer']['tickets']}</h5>
+                        <div class="progress used" used="{$userinfo['tickets_used']}" total="{$userinfo['tickets']}"></div>
+                        <small>{$userinfo['tickets_used']} / {$userinfo['tickets']}</small>
+                    </div>
+                </li>
                 </if>
-            </table>
+            </ul>
+        
         </div>
 
         <div class="tab-pane" id="customerdetails">
