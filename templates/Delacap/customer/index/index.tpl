@@ -88,30 +88,40 @@ $header
         <div class="tab-pane" id="customerdetails">
     
             <table class="table table-bordered table-striped">
+                <if $userinfo['name'] != '' >
                 <tr>
                     <td>{$lng['customer']['name']}:</td>
                     <td>{$userinfo['firstname']} {$userinfo['name']}</td>
                 </tr>
+                </if>
+                <if $userinfo['company'] != '' >
                 <tr>
                     <td>{$lng['customer']['company']}:</td>
                     <td>{$userinfo['company']}</td>
                 </tr>
+                </if>
+                <if $userinfo['street'] != '' >
                 <tr>
                     <td>{$lng['customer']['street']}:</td>
                     <td>{$userinfo['street']}</td>
                 </tr>
+                </if>
+                <if $userinfo['zipcode'] != '' and $userinfo['city'] != '' >
                 <tr>
                     <td>{$lng['customer']['zipcode']}/{$lng['customer']['city']}:</td>
                     <td>{$userinfo['zipcode']} {$userinfo['city']}</td>
                 </tr>
+                </if>
                 <tr>
                     <td>{$lng['customer']['email']}:</td>
                     <td>{$userinfo['email']}</td>
                 </tr>
+                <if $userinfo['customernumber'] != '' >
                 <tr>
                     <td>{$lng['customer']['customernumber']}:</td>
                     <td>{$userinfo['customernumber']}</td>
                 </tr>
+                </if>
             </table>
         </div>
 	</div>
