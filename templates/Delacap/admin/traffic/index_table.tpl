@@ -1,7 +1,8 @@
 	
+	<h4>{$lng['traffic']['trafficoverview']}&nbsp;{$overview['type']}&nbsp;{$overview['year']}</h4>
+    
 	<table class="table table-bordered table-striped" id="stats{$overview['year']}">
     
-		<h4>{$lng['traffic']['trafficoverview']}&nbsp;{$overview['type']}&nbsp;{$overview['year']}</h4>
         
 		<thead>
 			<tr>

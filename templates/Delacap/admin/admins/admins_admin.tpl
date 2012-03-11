@@ -9,8 +9,8 @@
 		&nbsp;({$row['loginname']})
 		</if>
 		</strong>
-		<div>
-			<span class="overviewcustomerextras">
+		<div class="subline">
+			<span>
 				Webspace:&nbsp;
 				<if $row['diskspace'] != 'UL'>
 					<span class="progressBar" title="{$row['diskspace_used']} / {$row['diskspace']} MB">
@@ -26,8 +26,8 @@
 						<span class="greybar"><em style="left: 200px;">100%</em></span>
 					</span>
 				</if>
-			</span>
-			<span class="overviewcustomerextras">
+			</span>&nbsp;
+			<span>
 				Traffic:&nbsp;
 				<if $row['traffic'] != 'UL'>
 					<span class="progressBar" title="{$row['traffic_used']} / {$row['traffic']} GB">
@@ -43,7 +43,7 @@
 						<span class="greybar"><em style="left: 200px;">100%</em></span>
 					</span>
 				</if>
-			</span>
+			</span>&nbsp;
 			<span style="clear: both !important;">
 				{$lng['admin']['customers']}: {$row['customers_used']}
 			</span>

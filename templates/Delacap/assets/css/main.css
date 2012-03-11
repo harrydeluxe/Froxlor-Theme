@@ -275,3 +275,68 @@ input#searchSubmit
 	display:none;
 	cursor:pointer;
 }
+
+/**
+* Traffic
+*/
+.progress.traffic
+{
+	height:			11px;
+	margin-top:		8px;
+	margin-bottom:	8px;
+}
+
+
+
+/**
+* Customer Index
+*/
+.progress.used
+{
+	height:			7px;
+	margin-top:		6px;
+	margin-bottom:	6px;
+	background:		#D7EDF8;
+}
+
+.progress.unlimited
+{
+	background:		#E4F4E4;
+}
+
+#accountdetails .thumbnail
+{
+	padding:		5px 10px 10px 10px;
+	background:		#fff;
+}
+
+
+#accountdetails small
+{
+	font-size:	11px;
+}
+
+
+
+.subline
+{
+	font-size:	90%;
+	color:		#727585;
+}
+
+
+
+
+#dialogabout
+{
+	width:			450px;
+}
+
+#dialogabout .modal-body
+{
+	/*
+	background:		#E4F4E4;
+	*/
+}
+
+

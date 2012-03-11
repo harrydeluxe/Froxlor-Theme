@@ -12,25 +12,33 @@ $header
 				<fieldset>
 
 					<table class="table table-bordered table-striped">
-						<tr>
-							<td>{$lng['traffic']['sumftp']} GB</td>
-							<td>{$lng['traffic']['sumhttp']} GB</td>
-							<td>{$lng['traffic']['summail']} GB</td>
-						</tr>
-						<tr>
-							<td><div style="color:#019522;text-align:center">{$traffic_complete['ftp']}</div></td>
-							<td><div style="color:#0000FF;text-align:center">{$traffic_complete['http']}</div></td>
-							<td><div style="color:#800000;text-align:center">{$traffic_complete['mail']}</div></td>
-						</tr>
+                        <thead>
+                            <tr>
+                                <th>{$lng['traffic']['sumftp']} GB</th>
+                                <th>{$lng['traffic']['sumhttp']} GB</th>
+                                <th>{$lng['traffic']['summail']} GB</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><div style="color:#46a546;text-align:center">{$traffic_complete['ftp']}</div></td>
+                                <td><div style="color:#049cdb;text-align:center">{$traffic_complete['http']}</div></td>
+                                <td><div style="color:#9d261d;text-align:center">{$traffic_complete['mail']}</div></td>
+                            </tr>
+                        </tbody>
 					</table>
-<br /><br />					
+					<br /><br />					
 					<table class="table table-bordered table-striped">
-						<tr>
-							<td>{$lng['traffic']['month']}</td>
-							<td>{$lng['traffic']['distribution']}</td>
-							<td class="text-align:right;">{$lng['customer']['traffic']}</td>
-						</tr>
-						$traffic
+                        <thead>
+                            <tr>
+                                <th>{$lng['traffic']['month']}</th>
+                                <th>{$lng['traffic']['distribution']}</th>
+                                <th class="text-align:right;">{$lng['customer']['traffic']}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+							$traffic
+                        </tbody>
 					</table>
 
 					<p style="display: none;">

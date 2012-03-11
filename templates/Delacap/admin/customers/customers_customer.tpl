@@ -9,13 +9,13 @@
 		</if>
 		&nbsp;(<a href="{$linker->getLink(array('section' => 'customers', 'page' => $page, 'action' => 'su', 'id' => $row['customerid']))}" rel="external">{$row['loginname']}</a> | {$row['adminname']})
 		</strong>
-		<div>
-			<span class="overviewcustomerextras">
+		<div class="subline">
+			<span>
 				Webspace:&nbsp;
 				<if $row['diskspace'] != 'UL'>
 					<span class="progressBar" title="{$row['diskspace_used']} / {$row['diskspace']} MB">
 						<if (($row['diskspace']/100)*(int)$settings['system']['report_webmax']) < $row['diskspace_used']>
-							<span class="redbar">
+							<span class="label label-important">
 						<else>
 							<span>
 						</if>
@@ -26,13 +26,13 @@
 						<span class="greybar"><em style="left: 200px;">100%</em></span>
 					</span>
 				</if>
-			</span>
-			<span class="overviewcustomerextras">
+			</span>&nbsp;
+			<span>
 				Traffic:&nbsp;
 				<if $row['traffic'] != 'UL'>
 					<span class="progressBar" title="{$row['traffic_used']} / {$row['traffic']} GB">
 						<if (($row['traffic']/100)*(int)$settings['system']['report_trafficmax']) < $row['traffic_used']>
-							<span class="redbar">
+							<span class="label label-important">
 						<else>
 							<span>
 						</if>
@@ -43,8 +43,8 @@
 						<span class="greybar"><em style="left: 200px;">100%</em></span>
 					</span>
 				</if>
-			</span>
-			<span style="clear: both !important;">
+			</span>&nbsp;
+			<span>
 				{$last_login}
 			</span>
 		</div>
@@ -52,7 +52,7 @@
 	<td>
 		<a class="btn btn-mini" alt="{$lng['panel']['edit']}" href="{$linker->getLink(array('section' => 'customers', 'page' => $page, 'action' => 'edit', 'id' => $row['customerid']))}" style="text-decoration:none;">
 			<i class="icon-pencil"></i>
-		</a>&nbsp;
+		</a>
 		<a rel="confirm" class="btn btn-mini" alt="{$lng['panel']['delete']}" href="{$linker->getLink(array('section' => 'customers', 'page' => $page, 'action' => 'delete', 'id' => $row['customerid']))}" style="text-decoration:none;">
 			<i class="icon-trash"></i>
 		</a>

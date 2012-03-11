@@ -25,6 +25,27 @@ $(document).ready(function()
 	});
 
 
+	// index stats
+	$("div.progress.used").each(function(index, element)
+	{
+		var used = $(element).attr('used'),
+			total = $(element).attr('total'),
+			w = (used != 0) ? 50 : 0;
+		
+		console.log($.isNumeric(total));
+		if($.isNumeric(total))
+		{
+			w = Math.round((100 / total) * used);
+		}
+		else
+		{
+			$(element).addClass('unlimited progress-success');
+		}
+		
+		$(element).html('<div class="bar" style="width: '+w+'%;"></div>');
+	});
+
+
 	bindSubmitForm(false);
 	
 	// catch all submit buttons, to provide a dialog for errors
@@ -38,6 +59,15 @@ $(document).ready(function()
 				});
 				bindSubmitForm(true);
 			});
+		return false;
+	});
+
+	// About Dialog
+	$("a[rel=about]").click(function(e){
+		$('#dialogabout').modal({
+		  backdrop: true,
+		  show: true
+		});
 		return false;
 	});
 
