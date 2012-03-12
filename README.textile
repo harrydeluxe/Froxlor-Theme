@@ -6,6 +6,7 @@ The default themes of Froxlor looks boring. Therefore, I have create a fresh the
 
 h2. Some screenshots
 
+!http://harrydeluxe.github.com/Froxlor-Theme/assets/images/customerindex.jpg!
 
 !http://harrydeluxe.github.com/Froxlor-Theme/assets/images/index.jpg!
 
