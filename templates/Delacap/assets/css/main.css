@@ -115,6 +115,10 @@ form.nomargin
 	margin:	0;
 }
 
+
+/**
+* Login Page
+*/
 .loginheader
 {
 	margin-top:	40px;
@@ -132,15 +136,36 @@ form.nomargin
 }
 .loginpage
 {
-	text-align: center;
-	width: 300px;
-	margin: 0 auto;
+	text-align: 	center;
+	width: 			400px;
+	margin: 		0 auto;
 }
 .loginsec
 {
-	margin: 20px auto;
-	text-shadow: 0 1px 0 #FFF;
+	margin: 		20px auto;
+	text-shadow: 	0 1px 0 #FFF;
 }
+
+.loginsec table
+{
+	width: 			400px;
+	background:		none;
+}
+.loginsec table td.left,
+.loginsec table td.left input
+{
+	width: 			100%;
+}
+.sp100
+{
+	width: 100%;
+}
+input.sp100
+{
+	width: 97%;
+}
+
+
 
 
 h2

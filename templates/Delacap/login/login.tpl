@@ -34,18 +34,34 @@ $header
         
 		<section class="loginsec">
         
-            <form class="form" method="post" action="$filename" enctype="application/x-www-form-urlencoded">
-                <input class="span4" type="text" placeholder="{$lng['login']['username']}" name="loginname" id="loginname" value="" required/>
-                <input class="span4" type="password" placeholder="{$lng['login']['password']}" name="password" id="password" required/>
-                <select class="span4" name="language" id="language">$language_options</select>
+            <form class="form-inline" method="post" action="$filename" enctype="application/x-www-form-urlencoded">
+                <div class="control-group">
+                    <select class="sp100" name="language" id="language">$language_options</select>
+                </div>
+                
+                <div class="control-group">
+                    <input class="sp100" type="text" placeholder="{$lng['login']['username']}" name="loginname" id="loginname" value="" required/>
+                </div>
+                <div class="control-group">
+                    <div class="input-append">
+                    	<table>
+                        	<tr>
+                            	<td class="left"><input type="password" placeholder="{$lng['login']['password']}" name="password" id="password" required/></td>
+                            	<td><input type="submit" class="btn btn-success" value="{$lng['login']['login']}" /></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
                 <div class="clearfix">
                     <input type="hidden" name="send" value="send" />
-                    <input type="submit" class="btn btn-inverse" value="{$lng['login']['login']}" />
                     <if $settings['panel']['allow_preset'] == '1'>
-                        &nbsp;&nbsp;&nbsp;<a href="$filename?action=forgotpwd">{$lng['login']['forgotpwd']}</a>
+                        <a href="$filename?action=forgotpwd">{$lng['login']['forgotpwd']}</a>
                     </if>
                 </div>
             </form>
+            
+            
+            
             
 		</section>
 

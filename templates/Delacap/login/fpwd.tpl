@@ -18,16 +18,25 @@ $header
 		</section>
             
         <section class="loginsec">
-            <form method="post" action="$filename" enctype="application/x-www-form-urlencoded">
-                <p>
-                    <input class="span4" type="text" placeholder="{$lng['login']['username']}" name="loginname" id="loginname" value="" required/>
-                    <input class="span4" type="text" placeholder="{$lng['login']['email']}" name="loginemail" id="loginemail" required/>
-                </p>
-                <p class="submit">
+            <form class="form-inline" method="post" action="$filename" enctype="application/x-www-form-urlencoded">
+                <div class="control-group">
+                    <input class="sp100" type="text" placeholder="{$lng['login']['username']}" name="loginname" id="loginname" value="" required/>
+                </div>
+                <div class="control-group">
+                    <div class="input-append">
+                        <table>
+                        	<tr>
+                            	<td class="left"><input type="text" placeholder="{$lng['login']['email']}" name="loginemail" id="loginemail" required/></td>
+                            	<td><input type="submit" class="btn btn-inverse" value="{$lng['login']['remind']}" /></td>
+                            </tr>
+                        </table>                        
+                    </div>
+                </div>
+                <div class="clearfix">
                     <input type="hidden" name="action" value="$action" />
                     <input type="hidden" name="send" value="send" />
-                    <input type="submit" class="btn btn-inverse" value="{$lng['login']['remind']}" />&nbsp;&nbsp;&nbsp;<a href="index.php">{$lng['login']['backtologin']}</a>
-                </p>
+                    <a href="index.php">{$lng['login']['backtologin']}</a>
+                </div>
             </form>
         </section>
         
