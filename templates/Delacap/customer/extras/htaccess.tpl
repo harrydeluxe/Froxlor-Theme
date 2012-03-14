@@ -23,13 +23,13 @@
 			<table class="table table-bordered table-striped">
 				<thead>
 					<tr>
-						<th>{$lng['panel']['path']}&nbsp;{$arrowcode['path']}</th>
-						<th>{$lng['extras']['view_directory']}&nbsp;{$arrowcode['options_indexes']}</th>
-						<th>{$lng['extras']['error404path']}&nbsp;{$arrowcode['error404path']}</th>
-						<th>{$lng['extras']['error403path']}&nbsp;{$arrowcode['error403path']}</th>
-						<th>{$lng['extras']['error500path']}&nbsp;{$arrowcode['error500path']}</th>
+						<th>{$lng['panel']['path']}{$arrowcode['path']}</th>
+						<th>{$lng['extras']['view_directory']}{$arrowcode['options_indexes']}</th>
+						<th>{$lng['extras']['error404path']}{$arrowcode['error404path']}</th>
+						<th>{$lng['extras']['error403path']}{$arrowcode['error403path']}</th>
+						<th>{$lng['extras']['error500path']}{$arrowcode['error500path']}</th>
 						<if $cperlenabled == 1 >
-						<th>{$lng['extras']['execute_perl']}&nbsp;{$arrowcode['options_cgi']}</th>
+						<th>{$lng['extras']['execute_perl']}{$arrowcode['options_cgi']}</th>
 						</if>
 						<th>{$lng['panel']['options']}</th>
 					</tr>

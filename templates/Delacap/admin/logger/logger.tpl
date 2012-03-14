@@ -23,10 +23,10 @@ $header
 			<table class="table table-bordered table-striped" id="sortTableExample">
 			<thead>
 				<tr>
-					<th class="header blue">{$lng['logger']['date']}&nbsp;&nbsp;{$arrowcode['date']}</th>
-					<th class="header green">{$lng['logger']['type']}&nbsp;&nbsp;{$arrowcode['type']}</th>
-					<th class="header blue">{$lng['logger']['user']}&nbsp;&nbsp;{$arrowcode['user']}</th>
-					<th class="header blue" style="width: 60%;">{$lng['logger']['action']}</th>
+					<th>{$lng['logger']['date']}{$arrowcode['date']}</th>
+					<th>{$lng['logger']['type']}{$arrowcode['type']}</th>
+					<th>{$lng['logger']['user']}{$arrowcode['user']}</th>
+					<th style="width: 60%;">{$lng['logger']['action']}</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -49,12 +49,4 @@ $header
 		</section>
 
 	</article>
-    <!--
-    <script src="http://autobahn.tablesorter.com/jquery.tablesorter.min.js"></script>
-    <script >
-  $(function() {
-    $("table#sortTableExample").tablesorter({ sortList: [[ 0, 0 ]] });
-  });
-</script>
--->
 $footer

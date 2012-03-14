@@ -23,13 +23,13 @@ $header
 			<table class="table table-bordered table-striped">
 			<thead>
 				<tr>
-					<th class="header">
-						{$lng['customer']['name']}&nbsp;&nbsp;{$arrowcode['c.name']}&nbsp;
-						{$lng['customer']['firstname']}&nbsp;&nbsp;{$arrowcode['c.firstname']}&nbsp;
-						{$lng['login']['username']}&nbsp;{$arrowcode['c.loginname']}
-						{$lng['admin']['admin']}&nbsp;{$arrowcode['a.loginname']}
+					<th class="multi">
+						<span>{$lng['customer']['name']}{$arrowcode['c.name']}</span>
+						<span>{$lng['customer']['firstname']}{$arrowcode['c.firstname']}</span>
+						<span>{$lng['login']['username']}{$arrowcode['c.loginname']}</span>
+						<span>{$lng['admin']['admin']}{$arrowcode['a.loginname']}</span>
 					</th>
-					<th class="header">{$lng['panel']['options']}</th>
+					<th>{$lng['panel']['options']}</th>
 				</tr>
 			</thead>
 				<if $pagingcode != ''>

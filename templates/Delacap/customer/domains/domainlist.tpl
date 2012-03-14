@@ -23,8 +23,8 @@
 			<table class="table table-bordered table-striped">
 				<thead>
 					<tr>
-						<th>{$lng['domains']['domainname']}&nbsp;&nbsp;{$arrowcode['d.domain']}</th>
-						<th>{$lng['panel']['path']}&nbsp;&nbsp;{$arrowcode['d.documentroot']}
+						<th>{$lng['domains']['domainname']}{$arrowcode['d.domain']}</th>
+						<th>{$lng['panel']['path']}{$arrowcode['d.documentroot']}</th>
 						<th>{$lng['panel']['options']}</th>
 					</tr>
 				</thead>

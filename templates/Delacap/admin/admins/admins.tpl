@@ -23,9 +23,9 @@ $header
 			<table class="table table-bordered table-striped">
 			<thead>
 				<tr>
-					<th>
-						{$lng['customer']['name']}&nbsp;&nbsp;{$arrowcode['name']}&nbsp;
-						{$lng['login']['username']}&nbsp;{$arrowcode['loginname']}
+					<th class="multi">
+						<span>{$lng['customer']['name']}{$arrowcode['name']}</span>
+						<span>{$lng['login']['username']}{$arrowcode['loginname']}</span>
 					</th>
 					<th>{$lng['panel']['options']}</th>
 				</tr>

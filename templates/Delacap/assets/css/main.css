@@ -340,3 +340,46 @@ input#searchSubmit
 }
 
 
+/**
+* Sort Table
+*/
+th.hover
+{
+	background: #E1E2E5;
+	cursor:		pointer;
+}
+
+span.sorter
+{
+	position:	relative;
+	float:		right;
+}
+
+th.multi > span > span.sorter
+{
+	float:		none;
+}
+th.multi > span > span.sorter img
+{
+	background-position: 0 -48px;
+}
+
+span.sorter img
+{
+	background: transparent url('../img/sort.png') no-repeat top left;
+	margin: 	0 4px -1px 4px;
+	width:		16px;
+	height:		16px;
+}
+
+th.multi > span > span.sorter.asc img,
+span.sorter.asc img
+{
+	background-position: 0 -32px;
+}
+
+th.multi > span > span.sorter.desc img,
+span.sorter.desc img
+{
+	background-position: 0 -16px;
+}

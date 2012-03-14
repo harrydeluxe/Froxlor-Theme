@@ -1,3 +1,23 @@
+$.extend({
+  getUrlVars: function()
+  {
+    var vars = [],
+		hash,
+		hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+		
+    for(var i = 0; i < hashes.length; i++)
+    {
+      hash = hashes[i].split('=');
+      vars.push(hash[0]);
+      vars[hash[0]] = hash[1];
+    }
+    return vars;
+  },
+  getUrlVar: function(name){
+    return $.getUrlVars()[name];
+  }
+});
+
 $(document).ready(function()
 {
 	// make rel="external" links open in a new window
@@ -22,6 +42,49 @@ $(document).ready(function()
 	// Back-button
 	$('#yesnobutton').click(function() {
 		history.back();
+	});
+
+
+	// Sort for tables
+	$('span[field]').each(function(index, element)
+	{
+		var th = $(element).parents("th"),
+			active = false;	
+			
+		if($(element).attr("field") == $.getUrlVar('sortfield'))
+		{
+			$(element).addClass($.getUrlVar('sortorder') == "asc" ? "asc" : "desc");
+			active = true;	
+		}
+		
+		
+		if($(th).hasClass('multi'))
+		{
+			$(element).parents("span").click(function(e)
+			{
+				window.location.href = $(element).attr(active ? ($.getUrlVar('sortorder') == "asc" ? "desc" : "asc") : "asc");
+				return false;
+			});
+		}
+		else
+		{
+			$(th).click(function(e)
+			{
+				window.location.href = $(element).attr(active ? ($.getUrlVar('sortorder') == "asc" ? "desc" : "asc") : "asc");
+				return false;
+			});
+		}
+		
+		$(th).hover(
+			function()
+			{
+				$(this).addClass("hover");
+			},
+			function()
+			{
+				$(this).removeClass("hover");
+			}
+		);
 	});
 
 

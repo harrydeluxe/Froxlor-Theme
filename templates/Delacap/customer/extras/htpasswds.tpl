@@ -23,8 +23,8 @@
 			<table class="table table-bordered table-striped">
 				<thead>
 					<tr>
-						<th>{$lng['login']['username']}&nbsp;{$arrowcode['username']}</th>
-						<th>{$lng['panel']['path']}&nbsp;{$arrowcode['path']}</th>
+						<th>{$lng['login']['username']}{$arrowcode['username']}</th>
+						<th>{$lng['panel']['path']}{$arrowcode['path']}</th>
 						<th>{$lng['panel']['options']}</th>
 					</tr>
 				</thead>
@@ -54,4 +54,3 @@
 		</section>
 	</article>
 $footer
-

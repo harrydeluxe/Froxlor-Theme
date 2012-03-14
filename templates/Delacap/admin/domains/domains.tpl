@@ -23,9 +23,9 @@
 			<table class="table table-bordered table-striped">
 				<thead>
 					<tr>
-						<th>{$lng['domains']['domainname']}&nbsp;{$arrowcode['d.domain']}</th>
-						<th>{$lng['admin']['ipsandports']['ip']}&nbsp;{$arrowcode['ip.ip']}&nbsp;:&nbsp;{$lng['admin']['ipsandports']['port']}&nbsp;{$arrowcode['ip.port']}</th>
-						<th>{$lng['admin']['customer']}&nbsp;&nbsp;{$arrowcode['c.loginname']}</th>
+						<th>{$lng['domains']['domainname']}{$arrowcode['d.domain']}</th>
+						<th class="multi"><span>{$lng['admin']['ipsandports']['ip']}{$arrowcode['ip.ip']}</span>:&nbsp;<span>{$lng['admin']['ipsandports']['port']}{$arrowcode['ip.port']}</span></th>
+						<th>{$lng['admin']['customer']}{$arrowcode['c.loginname']}</th>
 						<th>{$lng['panel']['options']}</th>
 					</tr>
 				</thead>

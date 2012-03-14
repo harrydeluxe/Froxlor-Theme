@@ -23,7 +23,7 @@ $header
 			<table class="table table-bordered table-striped">
 			<thead>
 				<tr>
-					<th>{$lng['admin']['ipsandports']['ip']}&nbsp;{$arrowcode['ip']}&nbsp;:&nbsp;{$lng['admin']['ipsandports']['port']}&nbsp;{$arrowcode['port']}</th>
+					<th class="multi"><span>{$lng['admin']['ipsandports']['ip']}{$arrowcode['ip']}</span>:&nbsp;<span>{$lng['admin']['ipsandports']['port']}{$arrowcode['port']}</span></th>
 					<th>Listen</th>
 					<th>NameVirtualHost</th>
 					<th>vHost-Container</th>

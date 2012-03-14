@@ -23,8 +23,8 @@
 			<table class="table table-bordered table-striped">
 				<thead>
 					<tr>
-						<th>{$lng['mysql']['databasename']}&nbsp;{$arrowcode['databasename']}</th>
-						<th>{$lng['mysql']['databasedescription']}&nbsp;{$arrowcode['description']}</th>
+						<th>{$lng['mysql']['databasename']}{$arrowcode['databasename']}</th>
+						<th>{$lng['mysql']['databasedescription']}{$arrowcode['description']}</th>
 						<th>{$lng['mysql']['size']}</th>
 						<if 1 < count($sql_root)><th>{$lng['mysql']['mysql_server']}</th></if>
 						<th>{$lng['panel']['options']}</th>

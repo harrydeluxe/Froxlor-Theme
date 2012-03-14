@@ -23,8 +23,8 @@
 			<table class="table table-bordered table-striped">
 				<thead>
 					<tr>
-						<th>{$lng['emails']['emailaddress']}&nbsp;{$arrowcode['m.email_full']}</th>
-						<th>{$lng['emails']['forwarders']}&nbsp;{$arrowcode['m.destination']}</th>
+						<th>{$lng['emails']['emailaddress']}{$arrowcode['m.email_full']}</th>
+						<th>{$lng['emails']['forwarders']}{$arrowcode['m.destination']}</th>
 						<th>{$lng['emails']['account']}</th>
 						<th>{$lng['emails']['catchall']}</th>
 						<if $settings['system']['mail_quota_enabled'] == '1'>
