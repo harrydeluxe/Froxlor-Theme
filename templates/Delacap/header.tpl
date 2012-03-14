@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
         <meta http-equiv="Default-Style" content="text/css" />
         <if $settings['panel']['no_robots'] == '0'>
             <meta name="robots" content="noindex, nofollow, noarchive" />
