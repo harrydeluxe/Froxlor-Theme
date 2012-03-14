@@ -23,10 +23,6 @@ $(document).ready(function()
 	// make rel="external" links open in a new window
 	$("a[rel='external']").attr('target', '_blank');
 	
-	// set focus on username-field if on loginpage
-	if ($(".loginpage").length != 0) {
-		$("#loginname").focus();
-	}
 
 	// Auto-select next field in configfile - wizard
 	$('#config_distribution').change(function (){
@@ -144,7 +140,11 @@ $(document).ready(function()
 	});
 
 
-	$(".login").fadeIn("slow");
+	// set focus on username-field if on loginpage
+	$(".login").fadeIn("slow", function(){
+		$("#loginname").focus();
+		});
+
 	
 
 
@@ -224,7 +224,6 @@ function bindSubmitForm(modal)
 			}
 			
 			$(this).ajaxSubmit({
-				traditional: true,
 				success: function(response, statusText, xhr, form)
 				{
 					if(statusText == 'success')
