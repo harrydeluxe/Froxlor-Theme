@@ -41,6 +41,49 @@ $(document).ready(function()
 	});
 
 
+	// domainSpecialDialog (see 0.9.27-rc1) greetings from James Bond
+	var domainSpecialDialog = $('#speciallogwarningpopup').modal({
+				backdrop: true,
+				show: false
+			});			
+	if(domainSpecialDialog.length == 1)
+	{
+		$('#delete_stats').keyup(function(event)
+		{
+			if($(this).val().toLowerCase() != $('#delete_statistics_str').val().toLowerCase())
+			{
+				$('#speciallogyesbutton').attr("disabled", "disabled");
+			}
+			else
+			{
+				$('#speciallogyesbutton').removeAttr("disabled");
+			}
+		});
+		
+		$('#speciallogyesbutton').click(function()
+		{
+			if($('input[name=speciallogfile]').prop("checked") != false)
+			{
+				$('input[name=speciallogfile]').attr("checked", false);
+			}
+			else
+			{
+				$('input[name=speciallogfile]').attr("checked", true);
+			}
+			$("#speciallogverified").val("1");
+			
+			$(domainSpecialDialog).modal("hide");
+		});
+
+		
+		$('input[name=speciallogfile]').click(function()
+		{
+			$(domainSpecialDialog).modal("show");
+			return false;
+		});
+	}
+	
+
 	// Sort for tables
 	$('span[field]').each(function(index, element)
 	{
