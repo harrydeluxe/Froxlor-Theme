@@ -25,9 +25,9 @@
 					<tr>
 						<th>{$lng['mysql']['databasename']}{$arrowcode['databasename']}</th>
 						<th>{$lng['mysql']['databasedescription']}{$arrowcode['description']}</th>
-						<th>{$lng['mysql']['size']}</th>
+						<th nowrap>{$lng['mysql']['size']}</th>
 						<if 1 < count($sql_root)><th>{$lng['mysql']['mysql_server']}</th></if>
-						<th>{$lng['panel']['options']}</th>
+						<th width="250">{$lng['panel']['options']}</th>
 					</tr>
 				</thead>
 				<if $pagingcode != ''>

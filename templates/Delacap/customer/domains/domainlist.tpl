@@ -25,7 +25,7 @@
 					<tr>
 						<th>{$lng['domains']['domainname']}{$arrowcode['d.domain']}</th>
 						<th>{$lng['panel']['path']}{$arrowcode['d.documentroot']}</th>
-						<th>{$lng['panel']['options']}</th>
+						<th width="250">{$lng['panel']['options']}</th>
 					</tr>
 				</thead>
 				<if $pagingcode != ''>
