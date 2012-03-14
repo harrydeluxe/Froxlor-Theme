@@ -367,7 +367,7 @@ th.multi > span > span.sorter img
 span.sorter img
 {
 	background: transparent url('../img/sort.png') no-repeat top left;
-	margin: 	0 4px -1px 4px;
+	margin: 	0 4px 0 4px;
 	width:		16px;
 	height:		16px;
 }
