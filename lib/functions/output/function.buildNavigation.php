@@ -117,7 +117,7 @@ function buildNavigation($navigation, $userinfo)
 												  'target' => null);
 						}
 					
-						eval("\$navigation_links .= \"" . getTemplate("navigation_link", 1) . "\";");
+						@eval("\$navigation_links .= \"" . getTemplate("navigation_link", 1) . "\";");
 					}
 				}
 		

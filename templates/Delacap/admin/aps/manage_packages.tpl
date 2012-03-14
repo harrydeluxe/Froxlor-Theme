@@ -5,7 +5,7 @@
 		</h2>
 	</header>
 
-	<section class="midform bradiusodd">
+	<section class="midform midformaps_1 bradiusodd">
 
     <form id="manage_packages_form" action="$filename" method="post" enctype="application/x-www-form-urlencoded">
         <input type="hidden" name="s" value="$s" />

@@ -5,7 +5,7 @@
 		</h2>
 	</header>
 
-	<section class="midform bradiusodd">
+	<section class="midform midformaps_1 bradiusodd">
 	
 		<form class="well form-inline" action="$filename" method="post" enctype="multipart/form-data">
 			<fieldset>
