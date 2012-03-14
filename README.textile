@@ -14,4 +14,6 @@ h2. Some screenshots
 
 !http://harrydeluxe.github.com/Froxlor-Theme/assets/images/supporttickets.jpg!
 
+!http://harrydeluxe.github.com/Froxlor-Theme/assets/images/modal.jpg!
+
 !http://harrydeluxe.github.com/Froxlor-Theme/assets/images/cronjob.jpg!
