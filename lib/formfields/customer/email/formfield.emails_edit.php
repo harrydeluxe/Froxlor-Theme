@@ -34,14 +34,13 @@ return array(
 						'visible' => ($result['popaccountid'] != 0 ? true : false),
 						'label' => $lng['emails']['account'],
 						'type' => 'label',
-						//'value' => $lng['panel']['yes'].'&nbsp;[<a href="'.$filename.'?page=accounts&amp;action=changepw&amp;id='.$result['id'].'&amp;s='.$s.'">'.$lng['menue']['main']['changepassword'].'</a>] [<a href="'.$filename.'?page=accounts&amp;action=delete&amp;id='.$result['id'].'&amp;s='.$s.'">'.$lng['emails']['account_delete'].'</a>]'
-						'value' => '<div class="btn-group"><a class="btn btn-mini" href="'.$filename.'?page=accounts&amp;action=changepw&amp;id='.$result['id'].'&amp;s='.$s.'">'.$lng['menue']['main']['changepassword'].'</a> <a rel="confirm" class="btn btn-mini" href="'.$filename.'?page=accounts&amp;action=delete&amp;id='.$result['id'].'&amp;s='.$s.'">'.$lng['emails']['account_delete'].'</a></div>'
+						'value' => ($userinfo['theme'] == 'Delacap' ? '<div class="btn-group"><a class="btn btn-mini" href="'.$filename.'?page=accounts&amp;action=changepw&amp;id='.$result['id'].'&amp;s='.$s.'">'.$lng['menue']['main']['changepassword'].'</a> <a rel="confirm" class="btn btn-mini" href="'.$filename.'?page=accounts&amp;action=delete&amp;id='.$result['id'].'&amp;s='.$s.'">'.$lng['emails']['account_delete'].'</a></div>' : $lng['panel']['yes'].'&nbsp;[<a href="'.$filename.'?page=accounts&amp;action=changepw&amp;id='.$result['id'].'&amp;s='.$s.'">'.$lng['menue']['main']['changepassword'].'</a>] [<a href="'.$filename.'?page=accounts&amp;action=delete&amp;id='.$result['id'].'&amp;s='.$s.'">'.$lng['emails']['account_delete'].'</a>]')
 					),
 					'account_no' => array(
 						'visible' => ($result['popaccountid'] == 0 ? true : false),
 						'label' => $lng['emails']['account'],
 						'type' => 'label',
-						'value' => '<a class="btn btn-mini" href="'.$filename.'?page=accounts&amp;action=add&amp;id='.$result['id'].'&amp;s='.$s.'">'.$lng['emails']['account_add'].'</a>'
+						'value' => ($userinfo['theme'] == 'Delacap' ? '<a class="btn btn-mini" href="'.$filename.'?page=accounts&amp;action=add&amp;id='.$result['id'].'&amp;s='.$s.'">'.$lng['emails']['account_add'].'</a>' : $lng['panel']['no'].'&nbsp;[<a href="'.$filename.'?page=accounts&amp;action=add&amp;id='.$result['id'].'&amp;s='.$s.'">'.$lng['emails']['account_add'].'</a>]')
 					),
 					'mail_quota' => array(
 						'visible' => ($result['popaccountid'] != 0 && $settings['system']['mail_quota_enabled']),
@@ -52,14 +51,12 @@ return array(
 					'mail_catchall' => array(
 						'label' => $lng['emails']['catchall'],
 						'type' => 'label',
-						//'value' => ($result['iscatchall'] == 0 ? $lng['panel']['no'] : $lng['panel']['yes']).' <a class="btn btn-mini btn-success" href="'.$filename.'?page='.$page.'&amp;action=togglecatchall&amp;id='.$result['id'].'&amp;s='.$s.'"><i class="icon-repeat"></i> '.$lng['panel']['toggle'].'</a>'
-						'value' => ' <a class="btn btn-mini '.($result['iscatchall'] == 0 ? "" : "btn-success").'" href="'.$filename.'?page='.$page.'&amp;action=togglecatchall&amp;id='.$result['id'].'&amp;s='.$s.'"><i class="icon-share-alt '.($result['iscatchall'] == 0 ? "" : "icon-white").'"></i> '.($result['iscatchall'] == 0 ? $lng['panel']['no'] : $lng['panel']['yes']).'</a>'
+						'value' => ($userinfo['theme'] == 'Delacap' ? ' <a class="btn btn-mini '.($result['iscatchall'] == 0 ? "" : "btn-success").'" href="'.$filename.'?page='.$page.'&amp;action=togglecatchall&amp;id='.$result['id'].'&amp;s='.$s.'"><i class="icon-share-alt '.($result['iscatchall'] == 0 ? "" : "icon-white").'"></i> '.($result['iscatchall'] == 0 ? $lng['panel']['no'] : $lng['panel']['yes']).'</a>' : ($result['iscatchall'] == 0 ? $lng['panel']['no'] : $lng['panel']['yes']).' <a class="btn btn-mini btn-success" href="'.$filename.'?page='.$page.'&amp;action=togglecatchall&amp;id='.$result['id'].'&amp;s='.$s.'"><i class="icon-repeat"></i> '.$lng['panel']['toggle'].'</a>')
 					),
 					'mail_fwds' => array(
 						'label' => $lng['emails']['forwarders'].' ('.$forwarders_count.')',
 						'type' => 'label',
-						//'value' => $forwarders.' <a href="'.$filename.'?page=forwarders&amp;action=add&amp;id='.$result['id'].'&amp;s='.$s.'">'.$lng['emails']['forwarder_add'].'</a>'
-						'value' => '<table class="table table-bordered">'.$forwarders.'</table><a class="btn btn-mini btn-success" href="'.$filename.'?page=forwarders&amp;action=add&amp;id='.$result['id'].'&amp;s='.$s.'">'.$lng['emails']['forwarder_add'].'</a>'
+						'value' => ($userinfo['theme'] == 'Delacap' ? '<table class="table table-bordered">'.$forwarders.'</table><a class="btn btn-mini btn-success" href="'.$filename.'?page=forwarders&amp;action=add&amp;id='.$result['id'].'&amp;s='.$s.'">'.$lng['emails']['forwarder_add'].'</a>' : $forwarders.' <a href="'.$filename.'?page=forwarders&amp;action=add&amp;id='.$result['id'].'&amp;s='.$s.'">'.$lng['emails']['forwarder_add'].'</a>')
 					)
 				)
 			)

@@ -471,6 +471,8 @@ class paging
 
 	function getHtmlPagingCode($baseurl)
 	{
+		global $userinfo;
+
 		if($this->entriesperpage == 0)
 		{
 			return '';
@@ -500,44 +502,41 @@ class paging
 			{
 				$stop = $pages;
 			}
-  
-			$pagingcode = '<ul>';
-			//$pagingcode.= '<a href="' . htmlspecialchars($baseurl) . '&amp;pageno=1">&laquo;</a> <a href="' . htmlspecialchars($baseurl) . '&amp;pageno=' . ((intval($this->pageno) - 1) == 0 ? '1' : intval($this->pageno) - 1) . '">&lt;</a>&nbsp;';
-			$pagingcode.= '<li><a href="' . htmlspecialchars($baseurl) . '&amp;pageno=' . ((intval($this->pageno) - 1) == 0 ? '1' : intval($this->pageno) - 1) . '">&lt;</a></li>';
-			
-			for ($i = $start;$i <= $stop;$i++)
-			{
-				if($i != $this->pageno)
-				{
-					$pagingcode.= '<li><a href="' . htmlspecialchars($baseurl) . '&amp;pageno=' . $i . '">' . $i . '</a></li>';
+ 
+			if ($userinfo['theme'] == 'Delacap') {
+
+				$pagingcode = '<ul>';
+				$pagingcode.= '<li><a href="' . htmlspecialchars($baseurl) . '&amp;pageno=' . ((intval($this->pageno) - 1) == 0 ? '1' : intval($this->pageno) - 1) . '">&lt;</a></li>';
+
+				for ($i = $start;$i <= $stop;$i++) {
+				
+					if ($i != $this->pageno) {
+						$pagingcode.= '<li><a href="' . htmlspecialchars($baseurl) . '&amp;pageno=' . $i . '">' . $i . '</a></li>';
+					} else {
+						$pagingcode.= '<li class="active"><a href="javascript:void(0)">' . $i . '</a></li>';
+					}
 				}
-				else
+
+				$pagingcode.= '<li><a href="' . htmlspecialchars($baseurl) . '&amp;pageno=' . ((intval($this->pageno) + 1) > $pages ? $pages : intval($this->pageno) + 1) . '">&gt;</a></li>';
+				$pagingcode.= '</ul>';
+
+			} else {
+
+				$pagingcode = '<a href="' . htmlspecialchars($baseurl) . '&amp;pageno=1">&laquo;</a> <a href="' . htmlspecialchars($baseurl) . '&amp;pageno=' . ((intval($this->pageno) - 1) == 0 ? '1' : intval($this->pageno) - 1) . '">&lt;</a>&nbsp;';
+				for ($i = $start;$i <= $stop;$i++)
 				{
-					$pagingcode.= '<li class="active"><a href="javascript:void(0)">' . $i . '</a></li>';
+					if($i != $this->pageno)
+					{
+						$pagingcode.= ' <a href="' . htmlspecialchars($baseurl) . '&amp;pageno=' . $i . '">' . $i . '</a>&nbsp;';
+					}
+					else
+					{
+						$pagingcode.= ' <strong>' . $i . '</strong>&nbsp;';
+					}
 				}
+
+				$pagingcode.= ' <a href="' . htmlspecialchars($baseurl) . '&amp;pageno=' . ((intval($this->pageno) + 1) > $pages ? $pages : intval($this->pageno) + 1) . '">&gt;</a> <a href="' . $baseurl . '&amp;pageno=' . $pages . '">&raquo;</a>';
 			}
-
-			$pagingcode.= '<li><a href="' . htmlspecialchars($baseurl) . '&amp;pageno=' . ((intval($this->pageno) + 1) > $pages ? $pages : intval($this->pageno) + 1) . '">&gt;</a></li>';
-			$pagingcode.= '</ul>';
-			//<a href="' . $baseurl . '&amp;pageno=' . $pages . '">&raquo;</a>';
-
-
-/*
-			$pagingcode = '<a href="' . htmlspecialchars($baseurl) . '&amp;pageno=1">&laquo;</a> <a href="' . htmlspecialchars($baseurl) . '&amp;pageno=' . ((intval($this->pageno) - 1) == 0 ? '1' : intval($this->pageno) - 1) . '">&lt;</a>&nbsp;';
-			for ($i = $start;$i <= $stop;$i++)
-			{
-				if($i != $this->pageno)
-				{
-					$pagingcode.= ' <a href="' . htmlspecialchars($baseurl) . '&amp;pageno=' . $i . '">' . $i . '</a>&nbsp;';
-				}
-				else
-				{
-					$pagingcode.= ' <strong>' . $i . '</strong>&nbsp;';
-				}
-			}
-
-			$pagingcode.= ' <a href="' . htmlspecialchars($baseurl) . '&amp;pageno=' . ((intval($this->pageno) + 1) > $pages ? $pages : intval($this->pageno) + 1) . '">&gt;</a> <a href="' . $baseurl . '&amp;pageno=' . $pages . '">&raquo;</a>';
-			*/
 		}
 		else
 		{
